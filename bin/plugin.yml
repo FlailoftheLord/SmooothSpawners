@@ -1,0 +1,20 @@
+# Oooh yeahhh, super smoooth with 3 o's like oreos!...
+name: SmooothSpawners
+prefix: sSpawners
+author: FlailoftheLord
+website: https://www.github.com/FlailoftheLord - https://discord.gg/wuxW5PS
+
+# heyyy, why are you reading this?
+main: me.flail.smooothspawners.SmooothSpawners
+version: 1.0.0
+api-version: 1.13
+
+# Idk... lol
+load: STARTUP
+softdepend: [MicroCommands, SilkSpawners]
+
+commands:
+  
+  smooothspawners:
+    aliases: [smoothspawners, sss, spawner, sspawners, sspawner, ssf]
+    description: command for spawners
