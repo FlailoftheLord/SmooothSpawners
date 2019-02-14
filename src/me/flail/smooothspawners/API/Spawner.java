@@ -44,8 +44,8 @@ public interface Spawner extends Map<ItemStack, String> {
 	Spawner setType(EntityType type);
 
 	/**
-	 * Set the display name of the spawner item.s
-	 * 
+	 * Set the display name of the spawner item.
+	 *
 	 * @param name
 	 */
 	void setDisplayName(String name);
