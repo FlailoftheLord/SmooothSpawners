@@ -16,3 +16,10 @@
 
 # The type of mob that will be used if an error occurs or a command argument is wrong.
 DefaultMobType: PIG
+
+# the default command is 'smooothspawners' but ya know... thats kinda long... add as many aliases as you want here!
+CommandAliases:
+- sss
+- smoothspawners
+- spawners
+- spawner
