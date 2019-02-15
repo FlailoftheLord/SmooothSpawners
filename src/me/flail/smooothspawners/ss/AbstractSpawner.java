@@ -10,18 +10,26 @@ import org.bukkit.inventory.meta.ItemMeta;
 import me.flail.smooothspawners.API.Spawner;
 import me.flail.smooothspawners.ss.Utilities.Tools;
 
-public abstract class AbstractSpawner implements Spawner {
+public abstract class AbstractSpawner extends HashMap<ItemStack, String> implements Spawner {
+
+	private static final long serialVersionUID = 1L;
+	public ItemStack item;
+	public String type;
+
+	public AbstractSpawner(ItemStack item, String type) {
+		this.type = type;
+		this.item = item;
+	}
 
 	private Spawner spawnerType(ItemStack item) {
 		if (item instanceof CreatureSpawner) {
 			CreatureSpawner creatureSpawner = (CreatureSpawner) item;
 			String type = creatureSpawner.getSpawnedType().name();
 
-			Spawner spawner = (Spawner) new HashMap<ItemStack, String>();
+			this.clear();
+			this.put(item, type);
 
-			spawner.put(item, type);
-
-			return spawner;
+			return this;
 		}
 
 		return null;
@@ -40,12 +48,11 @@ public abstract class AbstractSpawner implements Spawner {
 	}
 
 	@Override
-	public Spawner convert(ItemStack item, String type) {
-		Spawner spawner = null;
-		spawner = (Spawner) new HashMap<ItemStack, String>();
-		spawner.put(item, type);
+	public Spawner convert() {
+		this.clear();
+		this.put(item, type);
 
-		return spawner;
+		return this;
 	}
 
 	@Override
@@ -64,18 +71,24 @@ public abstract class AbstractSpawner implements Spawner {
 			CreatureSpawner spawnerItem = (CreatureSpawner) this.item();
 
 			spawnerItem.setSpawnedType(type);
+
+			this.clear();
+			this.put((ItemStack) spawnerItem, this.type);
 		}
 
-		return this.convert(this.item(), type.toString());
+		return this.convert();
 	}
 
 	@Override
 	public void setDisplayName(String name) {
 		Tools tools = new Tools();
-		if (this.item().hasItemMeta()) {
+		ItemStack newItem = this.item();
+		if (newItem.hasItemMeta()) {
 			ItemMeta im = this.item().getItemMeta();
 			im.setDisplayName(tools.chat(name));
-			this.item().setItemMeta(im);
+			newItem.setItemMeta(im);
+
+			this.put(newItem, type);
 		}
 	}
 

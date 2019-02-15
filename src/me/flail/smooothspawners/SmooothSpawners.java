@@ -8,6 +8,7 @@ import java.util.Set;
 
 import org.bukkit.Server;
 import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -16,7 +17,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import me.flail.smooothspawners.ss.Utilities.Boot;
 
-public class SmooothSpawners extends JavaPlugin {
+public class SmooothSpawners extends JavaPlugin implements CommandExecutor {
 
 	public Server server = this.getServer();
 	public PluginManager pm = server.getPluginManager();
@@ -40,6 +41,10 @@ public class SmooothSpawners extends JavaPlugin {
 
 		for (String command : commands) {
 			this.getCommand(command).setExecutor(this);
+			if (command.equalsIgnoreCase("smooothspawners")) {
+				new SpawnerCommand().process(null, this.getCommand(command), command, new String[] {});
+			}
+
 		}
 
 		return true;
@@ -53,8 +58,9 @@ public class SmooothSpawners extends JavaPlugin {
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		if (command.getName().toLowerCase().equals("smooothspawners")) {
+			boolean process = new SpawnerCommand().process(sender, command, label, args);
 
-			return new SpawnerCommand().process(sender, label, args);
+			return process;
 		}
 		return true;
 	}

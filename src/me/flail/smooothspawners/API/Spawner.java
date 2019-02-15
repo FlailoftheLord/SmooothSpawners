@@ -24,7 +24,7 @@ public interface Spawner extends Map<ItemStack, String> {
 	 *
 	 * @return the converted spawner object, provided the HashMap is not null
 	 */
-	Spawner convert(ItemStack item, String type);
+	Spawner convert();
 
 	/**
 	 * Gets the spawner type of this spawner.

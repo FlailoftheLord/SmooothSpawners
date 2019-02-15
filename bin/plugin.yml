@@ -16,5 +16,4 @@ softdepend: [MicroCommands, SilkSpawners]
 commands:
   
   smooothspawners:
-    aliases: [smoothspawners, sss, spawner, sspawners, sspawner, ssf]
     description: command for spawners

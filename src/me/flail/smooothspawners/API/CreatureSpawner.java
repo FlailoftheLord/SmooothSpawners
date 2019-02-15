@@ -1,26 +1,26 @@
 package me.flail.smooothspawners.API;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
 
-public class CreatureSpawner {
+import me.flail.smooothspawners.ss.AbstractSpawner;
 
-	ItemStack item;
-	EntityType type;
+public class CreatureSpawner extends AbstractSpawner {
 
-	public CreatureSpawner(ItemStack item, EntityType type) {
-		this.item = item;
-		this.type = type;
+	/**
+	 * Uid
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public CreatureSpawner(ItemStack item, String type) {
+		super(item, type);
 	}
 
-	public Spawner get() {
-		Map<ItemStack, String> spawnerMap = new HashMap<>();
-		spawnerMap.put(item, type.toString());
+	public Spawner get() throws ClassCastException {
 
-		return (Spawner) spawnerMap;
+		this.clear();
+		this.put(item, type);
+
+		return this;
 
 	}
 
