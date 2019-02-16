@@ -1,4 +1,4 @@
-package me.flail.smooothspawners.ss;
+package me.flail.smooothspawners.ss.Spawner;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,7 +13,7 @@ import org.bukkit.inventory.meta.tags.ItemTagType;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import me.flail.smooothspawners.SmooothSpawners;
-import me.flail.smooothspawners.API.Spawner;
+import me.flail.smooothspawners.API.Spawner.Spawner;
 import me.flail.smooothspawners.ss.Utilities.Tools;
 
 public abstract class AbstractSpawner extends HashMap<ItemStack, String> implements Spawner {

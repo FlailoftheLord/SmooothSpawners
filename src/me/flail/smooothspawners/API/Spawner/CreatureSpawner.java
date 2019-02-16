@@ -1,9 +1,9 @@
-package me.flail.smooothspawners.API;
+package me.flail.smooothspawners.API.Spawner;
 
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
 
-import me.flail.smooothspawners.ss.AbstractSpawner;
+import me.flail.smooothspawners.ss.Spawner.AbstractSpawner;
 
 public class CreatureSpawner extends AbstractSpawner {
 

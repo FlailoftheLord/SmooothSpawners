@@ -10,8 +10,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import me.flail.smooothspawners.API.CreatureSpawner;
-import me.flail.smooothspawners.API.Spawner;
+import me.flail.smooothspawners.API.Spawner.CreatureSpawner;
+import me.flail.smooothspawners.API.Spawner.Spawner;
 import me.flail.smooothspawners.ss.Utilities.Tools;
 
 public class SpawnerCommand {
@@ -88,6 +88,7 @@ public class SpawnerCommand {
 			} else {
 				return argCheck(operator, cmd, args);
 			}
+
 		}
 
 		return true;

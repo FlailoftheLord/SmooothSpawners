@@ -1,4 +1,4 @@
-package me.flail.smooothspawners.API;
+package me.flail.smooothspawners.API.Spawner;
 
 import java.util.Map;
 

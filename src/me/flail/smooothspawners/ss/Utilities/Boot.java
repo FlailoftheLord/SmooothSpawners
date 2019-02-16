@@ -24,6 +24,7 @@ public class Boot {
 			console.sendMessage(tools.chat("    - Commands"));
 			plugin.registerEvents();
 			console.sendMessage(tools.chat("    - Events"));
+			SmooothSpawners.loadSpawners();
 			SmooothSpawners.loadApi();
 			console.sendMessage(tools.chat("    - Listeners"));
 

@@ -4,22 +4,18 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.Writer;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Set;
 
-import org.bukkit.Location;
 import org.bukkit.Server;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import me.flail.smooothspawners.API.Spawner;
+import me.flail.smooothspawners.API.Data.SpawnerData;
 import me.flail.smooothspawners.ss.Utilities.Boot;
 
 public class SmooothSpawners extends JavaPlugin implements CommandExecutor {
@@ -30,7 +26,7 @@ public class SmooothSpawners extends JavaPlugin implements CommandExecutor {
 	public String version = this.getDescription().getVersion();
 	public String author = this.getDescription().getAuthors().get(0);
 
-	public Map<Player, Map<Spawner, Location>> spawners = new HashMap<>();
+	public SpawnerData spawners;
 
 	public SmooothSpawners loadInstance() {
 		return this;
@@ -39,6 +35,10 @@ public class SmooothSpawners extends JavaPlugin implements CommandExecutor {
 	@Override
 	public void onEnable() {
 		new Boot().bootDump(this);
+
+	}
+
+	public static void loadSpawners() {
 
 	}
 

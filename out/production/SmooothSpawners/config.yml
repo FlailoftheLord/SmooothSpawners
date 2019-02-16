@@ -1,0 +1,29 @@
+#-----------------------------------------------------------------
+#==================================================================#
+#                                                                  #
+#                 Plugin by FlailoftheLord.                        #
+#        -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                   #
+#        For questions please join my discord server:              #
+#                https://discord.gg/wuxW5PS                        #
+#   ______               __        _____                           #
+#   |       |           /  \         |        |                    #
+#   |__     |          /____\        |        |                    #
+#   |       |         /      \       |        |                    #
+#   |       |_____   /        \    __|__      |______              #
+#                                                                  #
+#==================================================================#
+#-----------------------------------------------------------------
+
+# The type of mob that will be used if an error occurs or a command argument is wrong.
+DefaultMobType: PIG
+
+# give the item type for the spawner item.
+SpawnerItemType: SPAWNER
+
+# the default command is 'smooothspawners' but ya know... thats kinda long... add as many aliases as you want here!
+CommandAliases:
+- sss
+- smoothspawners
+- spawners
+- spawner
+
