@@ -20,7 +20,7 @@ public interface Spawner extends Map<ItemStack, String> {
 	ItemStack item();
 
 	/**
-	 * converts a regular HashMap to a fancy Spawner object.
+	 * Converts a Map of ItemStack and EntityType to a fancy Spawner object.
 	 *
 	 * @return the converted spawner object, provided the HashMap is not null
 	 */
@@ -35,7 +35,7 @@ public interface Spawner extends Map<ItemStack, String> {
 	Spawner getType();
 
 	/**
-	 * Sets the spawner type of the itemstack if its a spawner.
+	 * Sets the spawner type of the itemstack if it's a spawner.
 	 *
 	 * @param spawner the itemstack to set the spawner type of.
 	 * @param type    type of Entity for the spawner to spawn.

@@ -15,10 +15,13 @@ public class CreatureSpawner extends AbstractSpawner {
 		super(item, type);
 	}
 
-	public Spawner get() throws ClassCastException {
+	public Spawner get() throws NullPointerException {
 
 		this.clear();
 		this.put(item, type);
+		if (this.isEmpty()) {
+			throw new NullPointerException();
+		}
 
 		return this;
 

@@ -14,17 +14,19 @@ public class Boot {
 			console.sendMessage(tools.chat("|********************"));
 			console.sendMessage(tools.chat(" "));
 			console.sendMessage(tools.chat(" &eLoading SmooothSpawners..."));
-			plugin.registerCommands();
+
 			console.sendMessage(tools.chat(" Loaded:"));
+			plugin.saveDefaultConfig();
+			plugin.pluginDesc();
+			plugin.saveDesc();
+			console.sendMessage(tools.chat("    - Files"));
+			plugin.registerCommands();
 			console.sendMessage(tools.chat("    - Commands"));
 			plugin.registerEvents();
 			console.sendMessage(tools.chat("    - Events"));
 			SmooothSpawners.loadApi();
 			console.sendMessage(tools.chat("    - Listeners"));
-			plugin.saveDefaultConfig();
-			plugin.pluginDesc();
-			plugin.saveDesc();
-			console.sendMessage(tools.chat("    - Files"));
+
 			console.sendMessage(tools.chat(" "));
 			console.sendMessage(tools.chat(" &3SmooothSpawners"));
 			console.sendMessage(tools.chat("   &7version " + plugin.version));
