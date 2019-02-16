@@ -8,7 +8,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import me.flail.smooothspawners.API.CreatureSpawner;
@@ -103,14 +102,12 @@ public class SpawnerCommand {
 			if (type != null) {
 				ItemStack spawnerItem = new ItemStack(Material.SPAWNER);
 				spawnerItem.setAmount(amount);
-				ItemMeta meta = spawnerItem.getItemMeta();
-				meta.setDisplayName(tools.chat("&eFancy " + type.toString().toLowerCase() + " spawner."));
-				spawnerItem.setItemMeta(meta);
-				Spawner spawner = new CreatureSpawner(spawnerItem, type.toString()).get();
+				Spawner spawner = new CreatureSpawner(spawnerItem, type.toString()).create();
+				spawner.setDisplayName(tools.chat("&e" + tools.mobName(type, true) + " spawner"));
 
-				player.getInventory().addItem(spawner.setType(type).item());
+				player.getInventory().addItem(spawner.item());
 
-				player.sendMessage(tools.chat("{prefix} &aYou got a " + args[1] + " spawner!"));
+				player.sendMessage(tools.chat("{prefix} &aYou got a(n) " + args[1] + " spawner(s)"));
 
 				return true;
 			}

@@ -1,5 +1,6 @@
 package me.flail.smooothspawners.API;
 
+import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
 
 import me.flail.smooothspawners.ss.AbstractSpawner;
@@ -13,9 +14,13 @@ public class CreatureSpawner extends AbstractSpawner {
 
 	public CreatureSpawner(ItemStack item, String type) {
 		super(item, type);
+		this.clear();
+		this.put(item, type);
 	}
 
-	public Spawner get() throws NullPointerException {
+	public Spawner create() throws NullPointerException {
+
+		this.setType(EntityType.valueOf(type.toUpperCase()));
 
 		this.clear();
 		this.put(item, type);
